@@ -1,0 +1,240 @@
+/* styles.css */
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+/* Container for Department Users */
+.department-users-container,
+.departments-container,
+.create-form-container,
+.update-form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+/* Header Section for Department Users */
+.department-users-header,
+.departments-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Buttons in Header */
+.header-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* Add User Link Button */
+.add-user-link,
+.create-department-link,
+.view-users-link {
+    padding: 10px 20px;
+    background-color: #28a745; /* Green */
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.add-user-link:hover,
+.create-department-link:hover,
+.view-users-link:hover {
+    background-color: #218838;
+}
+
+/* Back to Departments Button */
+.back-button {
+    padding: 10px 20px;
+    background-color: #6c757d; /* Gray */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #5a6268;
+}
+
+/* User Table Styles */
+.user-table,
+.department-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-table th,
+.user-table td,
+.department-table th,
+.department-table td {
+    padding: 12px;
+    border: 1px solid #dee2e6;
+    text-align: left;
+}
+
+.user-table th,
+.department-table th {
+    background-color: #343a40; /* Dark */
+    color: #fff;
+}
+
+.user-list-item:nth-child(even),
+.department-list-item:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Action Links and Buttons */
+.update-link,
+.view-users-link {
+    padding: 5px 10px;
+    background-color: #17a2b8; /* Teal */
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-right: 5px;
+    transition: background-color 0.3s;
+}
+
+.update-link:hover,
+.view-users-link:hover {
+    background-color: #138496;
+}
+
+.delete-button {
+    padding: 5px 10px;
+    background-color: #dc3545; /* Red */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+/* Form Container */
+.create-form-container,
+.update-form-container,
+.department-form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+/* Form Header */
+.create-form-header,
+.update-form-header {
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.update-form-input,
+.create-form-input,
+.department-form-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.update-form-input:focus,
+.create-form-input:focus,
+.department-form-input:focus {
+    border-color: #80bdff;
+    outline: none;
+}
+
+/* Submit Buttons */
+.update-form-button,
+.create-form-button {
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #007bff; /* Blue */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.update-form-button:hover,
+.create-form-button:hover {
+    background-color: #0056b3;
+}
+
+/* Back to Departments Link */
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #6c757d; /* Gray */
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.back-link:hover {
+    background-color: #5a6268;
+}
+
+/* Departments List Styles */
+.department-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.department-table th,
+.department-table td {
+    padding: 12px;
+    border: 1px solid #dee2e6;
+    text-align: left;
+}
+
+.department-table th {
+    background-color: #343a40; /* Dark */
+    color: #fff;
+}
+
+.department-list-item:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.view-users-link {
+    padding: 5px 10px;
+    background-color: #ffc107; /* Yellow */
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-right: 5px;
+    transition: background-color 0.3s;
+}
+
+.view-users-link:hover {
+    background-color: #e0a800;
+}
