@@ -1,8 +1,8 @@
-// Departments.js
+
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import './styles.css'; // Import the CSS file
+import './styles.css';
 
 const Departments = () => {
     const [departments, setDepartments] = useState([]);
@@ -10,7 +10,7 @@ const Departments = () => {
 
     const fetchDepartments = async () => {
         try {
-            const response = await axios.get("http://localhost:3001/departments");
+            const response = await axios.get("http://localhost:8080/departments");
             setDepartments(response.data);
         } catch (error) {
             console.error("Failed to fetch departments:", error);
@@ -24,7 +24,7 @@ const Departments = () => {
         if (!confirmDelete) return;
 
         try {
-            await axios.delete(`http://localhost:3001/department/${id}`);
+            await axios.delete(`http://localhost:8080/department/${id}`);
             setDepartments(departments.filter(department => department._id !== id));
             alert("Department deleted successfully");
         } catch (error) {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import './styles.css'; // Import the CSS file
+import './styles.css';
 
 const UpdateDepartment = () => {
     const [department, setDepartment] = useState({ name: "" });
@@ -10,7 +10,7 @@ const UpdateDepartment = () => {
 
     useEffect(() => {
         const fetchDepartment = async () => {
-            const response = await axios.get(`http://localhost:3001/department/${id}`);
+            const response = await axios.get(`http://localhost:8080/department/${id}`);
             setDepartment(response.data);
         };
         fetchDepartment();
@@ -24,7 +24,7 @@ const UpdateDepartment = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:3001/updateDepartment/${id}`, department);
+            await axios.put(`http://localhost:8080/updateDepartment/${id}`, department);
             alert("Department updated successfully");
             navigate("/departments");
         } catch (error) {

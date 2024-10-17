@@ -1,22 +1,22 @@
-// DepartmentUsers.js
+
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import axios from 'axios';
-import './styles.css'; // Import the CSS file
+import './styles.css';
 
 function DepartmentUsers() {
     const { id } = useParams();
-    const navigate = useNavigate(); // Initialize navigate
+    const navigate = useNavigate(); 
     const [users, setUsers] = useState([]);
     const [departmentName, setDepartmentName] = useState('');
 
     useEffect(() => {
         const fetchDepartmentUsers = async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/department/${id}`);
-                console.log('Department Data:', response.data); // Verify data structure
+                const response = await axios.get(`http://localhost:8080/department/${id}`);
+                console.log('Department Data:', response.data); 
                 setUsers(response.data.users);
-                setDepartmentName(response.data.name); // Assuming department has a name field
+                setDepartmentName(response.data.name);
             } catch (error) {
                 console.error('Failed to fetch department users:', error);
                 alert('Failed to fetch department users.');
@@ -31,8 +31,8 @@ function DepartmentUsers() {
         if (!confirmDelete) return;
 
         try {
-            await axios.delete(`http://localhost:3001/user/${userId}`);
-            setUsers(users.filter((user) => user._id !== userId)); // Remove deleted user from state
+            await axios.delete(`http://localhost:8080/user/${userId}`);
+            setUsers(users.filter((user) => user._id !== userId)); 
             alert('User deleted successfully');
         } catch (error) {
             console.error('Failed to delete user:', error);

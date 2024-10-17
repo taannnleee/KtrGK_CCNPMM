@@ -1,15 +1,14 @@
-// CreateDepartment.js
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './styles.css'; // Import the CSS file
-
+import './styles.css'; 
 const CreateDepartment = () => {
     const navigate = useNavigate();
     const [name, setName] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:3001/createDepartment', {
+        fetch('http://localhost:8080/createDepartment', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -19,7 +18,7 @@ const CreateDepartment = () => {
             .then((response) => response.json())
             .then((data) => {
                 console.log('Department created:', data);
-                navigate('/departments'); // Redirect to the departments list
+                navigate('/departments'); 
             })
             .catch((error) => {
                 console.error('Error creating department:', error);

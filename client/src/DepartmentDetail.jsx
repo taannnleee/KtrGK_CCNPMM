@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
-import './styles.css'; // Import the CSS file
+import './styles.css';
 
 const DepartmentDetails = () => {
     const { id } = useParams();
@@ -10,7 +10,7 @@ const DepartmentDetails = () => {
     useEffect(() => {
         const fetchDepartment = async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/department/${id}`);
+                const response = await axios.get(`http://localhost:8080/department/${id}`);
                 setDepartment(response.data);
             } catch (error) {
                 console.error('Error fetching department:', error);
@@ -21,10 +21,10 @@ const DepartmentDetails = () => {
 
     const handleDeleteUser = async (userId) => {
         try {
-            await axios.delete(`http://localhost:3001/user/${userId}`);
+            await axios.delete(`http://localhost:8080/user/${userId}`);
             alert('User deleted successfully');
-            // Optionally, refresh the department details after deletion
-            const updatedDepartment = await axios.get(`http://localhost:3001/department/${id}`);
+            
+            const updatedDepartment = await axios.get(`http://localhost:8080/department/${id}`);
             setDepartment(updatedDepartment.data);
         } catch (error) {
             console.error('Error deleting user:', error);
@@ -37,7 +37,7 @@ const DepartmentDetails = () => {
         <div>
             <h1>{department.name}</h1>
             <h2>Staff</h2>
-            {/* Button to add user */}
+            
             <Link to={`/createUser/${id}`}>
                 <button>Add Staff</button>
             </Link>

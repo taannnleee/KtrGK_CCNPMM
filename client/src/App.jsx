@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Users from "./Users";
-import CreateUser from "./CreateUser"; // Make sure to import CreateUser
+import CreateUser from "./CreateUser";
 import UpdateUser from "./UpdateUser";
 import Departments from "./Departments";
 import CreateDepartment from "./CreateDepartment";

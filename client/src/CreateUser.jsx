@@ -17,9 +17,9 @@ function CreateUser() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post(`http://localhost:3001/createUser/${departmentId}`, user);
+            await axios.post(`http://localhost:8080/createUser/${departmentId}`, user);
             alert("User created successfully");
-            navigate(`/department/${departmentId}`); // Redirect to department after adding user
+            navigate(`/department/${departmentId}`); 
         } catch (error) {
             console.error("Failed to create user:", error);
             alert("Failed to create user");
@@ -40,7 +40,6 @@ function CreateUser() {
                     className="create-form-input" 
                 />
                 
-                {/* Replace Position Text Input with Select Dropdown */}
                 <select
                     name="position"
                     value={user.position}

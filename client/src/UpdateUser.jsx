@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import './styles.css'; // Import the CSS file
+import './styles.css'; 
 
 function UpdateUser() {
     const { userId } = useParams();
@@ -11,7 +11,7 @@ function UpdateUser() {
     useEffect(() => {
         const fetchUser = async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/user/${userId}`);
+                const response = await axios.get(`http://localhost:8080/user/${userId}`);
                 setUser(response.data);
             } catch (error) {
                 console.error("Failed to fetch user:", error);
@@ -29,7 +29,7 @@ function UpdateUser() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:3001/updateUser/${userId}`, user);
+            await axios.put(`http://localhost:8080/updateUser/${userId}`, user);
             navigate(`/department/${user.department}`); // Redirect to department after updating user
         } catch (error) {
             console.error("Failed to update user:", error);
